@@ -12,8 +12,7 @@ const Home = () => {
   console.log(videos)
 
   return (
-    <ul className='flex'>
-      <h1 className='text-red-800'>안녕하세요</h1>
+    <ul className='p-4 grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-10'>
       {
         videos && (
           videos.map((video) => <VideoCard key={video.id} video={video}/>)
