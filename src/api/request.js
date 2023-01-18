@@ -7,7 +7,7 @@ const instance = axios.create({
   },
 });
 
-export const mostPopular = async () => {
+export const getMostPopularVideos = async () => {
   const response = await instance.get('/videos', {
     params: {
       part: 'snippet',
@@ -15,5 +15,71 @@ export const mostPopular = async () => {
       maxResults: '25',
     },
   });
+  return response.data.items;
+};
+
+export const getViewCount = async (videoId) => {
+  const response = await instance.get('/videos', {
+    params: {
+      part: 'snippet',
+      part: 'contentDetails',
+      part: 'player',
+      part: 'statistics',
+      id: videoId,
+    },
+  });
+  return response.data.items[0].statistics.viewCount;
+};
+
+export const getChannelImg = async (channelId) => {
+  const response = await instance.get('/channels', {
+    params: {
+      part: 'snippet',
+      id: channelId,
+    },
+  });
+  return response.data.items[0].snippet.thumbnails.default.url;
+};
+
+export const getChannelData = async (channelId) => {
+  const response = await instance.get('/channels', {
+    params: {
+      part: 'snippet',
+      id: channelId,
+    },
+  });
+  return response.data.items[0].snippet;
+};
+
+export const getSubscriberInfo = async (channelId) => {
+  const response = await instance.get('/channels', {
+    params: {
+      part: 'statistics',
+      id: channelId,
+    },
+  });
+  return response.data.items[0].statistics.subscriberCount;
+};
+
+export const getPlayListId = async (channelId) => {
+  const response = await instance.get('/playlists', {
+    params: {
+      part: 'snippet',
+      part: 'contentDetails',
+      channelId: channelId,
+    },
+  });
+  return response.data.items[0].id;
+};
+
+export const getPlayListItems = async (playListId) => {
+  const response = await instance
+    .get('/playlistItems', {
+      params: {
+        part: 'snippet',
+        playlistId: playListId,
+      },
+    })
+    .catch((error) => console.log(error));
   return response.data.items;
 };
