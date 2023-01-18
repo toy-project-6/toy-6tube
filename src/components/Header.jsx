@@ -14,8 +14,8 @@ const Header = () => {
   const [isFolded, setIsFolded] = useState(false);
 
   return (
-    <header className='relative bg-[#212121]'>
-      <div className='mx-auto max-w-full px-6 h-14 border-solid border-b border-gray-600'>
+    <header>
+      <div className='mx-auto w-full fixed z-10 px-6 h-14 bg-[#212121] border-solid border-b border-gray-600'>
         <div className='h-full flex items-center justify-between'>
           <div className='flex justify-between w-32'>
             <AiOutlineMenu
