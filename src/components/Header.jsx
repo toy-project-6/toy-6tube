@@ -8,11 +8,20 @@ import {
 } from 'react-icons/ai';
 import { BiSearch } from 'react-icons/bi';
 import { HiMicrophone } from 'react-icons/hi';
+import { Link, useNavigate } from 'react-router-dom';
 import logo from '../assets/logo.png';
 
-const Header = () => {
-  const [isFolded, setIsFolded] = useState(false);
-
+const Header = ({ isFolded, setIsFolded }) => {
+  const [search, setSearch] = useState('');
+  const navigate = useNavigate();
+  const onChange = (event) => {
+    setSearch(event.target.value);
+  };
+  const onSubmit = (event) => {
+    event.preventDefault();
+    navigate(`/search?query=${search}`);
+    setSearch('');
+  };
   return (
     <header>
       <div className='mx-auto w-full fixed z-10 px-6 h-14 bg-[#212121] border-solid border-b border-gray-600'>
@@ -22,22 +31,29 @@ const Header = () => {
               className='w-5 h-5 fill-white cursor-pointer'
               onClick={() => setIsFolded(!isFolded)}
             />
-            <img src={logo} alt='logo' className='h-5 cursor-pointer' />
+            <Link to='/'>
+              <img src={logo} alt='logo' className='h-5 cursor-pointer' />
+            </Link>
           </div>
           <div className='-my-2 -mr-2 md:hidden'>
             <BiSearch className='w-5 h-5 fill-white' />
           </div>
           <div className='hidden space-x-10 md:flex'>
             <div className='flex items-center'>
-              <div className='flex items-center relative'>
+              <form onSubmit={onSubmit} className='flex items-center relative'>
                 <input
-                  type='search'
-                  name='video'
+                  type='text'
+                  value={search}
+                  onChange={onChange}
+                  name='search'
                   id='videoSearch'
-                  className='rounded-sm w-72 h-7'
+                  placeholder='Search'
+                  className='rounded-sm w-72 h-7 placeholder:italic placeholder:text-slate-400 pl-1 text-xs'
                 />
-                <AiOutlineSearch className='w-5 h-5 fill-slate-700 absolute right-2 ' />
-              </div>
+                <button type='submit' className=' absolute right-2'>
+                  <AiOutlineSearch className='w-5 h-5 fill-slate-700' />
+                </button>
+              </form>
               <HiMicrophone className='w-5 h-5 fill-white ml-3 cursor-pointer' />
             </div>
           </div>
