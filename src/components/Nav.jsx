@@ -4,8 +4,8 @@ import { MdExplore, MdSubscriptions, MdVideoLibrary } from 'react-icons/md';
 import { GrHistory } from 'react-icons/gr';
 import { HiThumbUp } from 'react-icons/hi';
 
-const Nav = () => {
-  return (
+const Nav = ({ isFolded }) => {
+  return isFolded ? (
     <nav className='sticky top-0 h-full bg-[#212121]'>
       <div className='hidden w-16 pt-16 h-screen md:flex xl:hidden flex-col justify-start items-center'>
         <div className='text-white font-semibold text-xs flex flex-col items-center gap-2 py-8 w-full hover:bg-[#414141] cursor-pointer'>
@@ -59,6 +59,19 @@ const Nav = () => {
             <AiFillFlag className='w-5 h-5 fill-white' />
             Report history
           </div>
+        </div>
+      </div>
+    </nav>
+  ) : (
+    <nav className='sticky top-0 h-full bg-[#212121]'>
+      <div className='w-16 pt-16 h-screen md:flex flex-col justify-start items-center'>
+        <div className='text-white font-semibold text-xs flex flex-col items-center gap-2 py-8 w-full hover:bg-[#414141] cursor-pointer'>
+          <AiFillHome className='w-5 h-5 fill-white' />
+          Home
+        </div>
+        <div className='text-white font-semibold text-xs flex flex-col items-center gap-2 py-8 w-full hover:bg-[#414141] cursor-pointer'>
+          <MdExplore className='w-5 h-5 fill-white' />
+          Explore
         </div>
       </div>
     </nav>
