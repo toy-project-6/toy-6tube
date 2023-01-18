@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import Nav from '../components/Nav';
 
 const Home = () => {
-  return <div>Home</div>;
+  return <Nav />;
 };
 
 export default Home;
