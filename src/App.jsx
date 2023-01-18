@@ -4,13 +4,16 @@ import './App.css';
 import Router from './Router';
 import Header from './components/Header';
 import MovieDetail from './pages/MovieDetail';
+import Nav from './components/Nav';
 
 function App() {
   return (
     <>
       <Header />
-      {/* <MovieDetail /> */}
-      <Router />
+      <container className='flex flex-nowrap'>
+        <Nav />
+        <Router />
+      </container>
     </>
   );
 }
