@@ -12,10 +12,10 @@ function App() {
   const [isFolded, setIsFolded] = useState(false);
 
   return (
-    <BrowserRouter className='h-full relative'>
+    <BrowserRouter className='h-full'>
       <Header isFolded={isFolded} setIsFolded={setIsFolded} />
-      <div className='flex flex-nowrap h-fit w-full pt-14'>
-        <div>
+      <div className='flex h-fit w-full pt-14'>
+        <div className='min-w-fit'>
           <Nav isFolded={isFolded} />
         </div>
         <Routes>
