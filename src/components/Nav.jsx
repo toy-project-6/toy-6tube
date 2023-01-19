@@ -6,7 +6,7 @@ import { HiThumbUp } from 'react-icons/hi';
 
 const Nav = ({ isFolded }) => {
   return isFolded ? (
-    <nav className='sticky top-0 h-full bg-[#212121]'>
+    <nav className='sticky top-0 h-full bg-[#212121] '>
       <div className='hidden w-16 pt-16 h-screen md:flex xl:hidden flex-col justify-start items-center'>
         <div className='text-white font-semibold text-xs flex flex-col items-center gap-2 py-8 w-full hover:bg-[#414141] cursor-pointer'>
           <AiFillHome className='w-5 h-5 fill-white' />
@@ -63,7 +63,7 @@ const Nav = ({ isFolded }) => {
       </div>
     </nav>
   ) : (
-    <nav className='sticky top-0 h-full bg-[#212121]'>
+    <nav className='sticky top-0 h-full bg-[#212121] '>
       <div className='w-16 pt-16 h-screen md:flex flex-col justify-start items-center'>
         <div className='text-white font-semibold text-xs flex flex-col items-center gap-2 py-8 w-full hover:bg-[#414141] cursor-pointer'>
           <AiFillHome className='w-5 h-5 fill-white' />
