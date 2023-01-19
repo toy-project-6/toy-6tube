@@ -4,7 +4,6 @@ import VideoCard from '../components/VideoCard';
 
 const Home = () => {
   const [videos, setVideos] = useState();
-
   useEffect(() => {
     getMostPopularVideos().then(data =>{setVideos(data)})
   }, [])

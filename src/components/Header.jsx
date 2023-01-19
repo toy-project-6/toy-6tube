@@ -19,6 +19,7 @@ const Header = ({ isFolded, setIsFolded }) => {
   };
   const onSubmit = (event) => {
     event.preventDefault();
+    if (!search) return;
     navigate(`/search?query=${search}`);
     setSearch('');
   };

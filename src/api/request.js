@@ -18,6 +18,30 @@ export const getMostPopularVideos = async () => {
   return response.data.items;
 };
 
+export const related = async (videoId) => {
+  const response = await instance.get('/search', {
+    params: {
+      part: 'snippet',
+      maxResults: '11',
+      relatedToVideoId: videoId,
+      type: 'video',
+    },
+  });
+  console.log(response);
+  return response.data.items;
+};
+
+export const search = async (query) => {
+  const response = await instance.get('/search', {
+    params: {
+      part: 'snippet',
+      maxResults: '25',
+      q: query,
+      type: 'video',
+    },
+  });
+  return response.data.items;
+};
 export const getViewCount = async (videoId) => {
   const response = await instance.get('/videos', {
     params: {
