@@ -31,7 +31,7 @@ export default VideoCard;
 // 디테일페이지 비디오카드
 export const DetailVideoCard = ({ video }) => {
   const { channelTitle, publishedAt, thumbnails, title } = video.snippet;
-  console.log(video);
+  // console.log(video);
 
   const handleClick = () => {};
 

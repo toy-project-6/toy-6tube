@@ -14,7 +14,7 @@ const RelatedVideos = () => {
   }, []);
 
   return (
-    <div className='w-[402px] absolute right-0 pr-[24px]'>
+    <div className='w-[402px]  pr-[24px]'>
       <ul className='gap-[8px] columns-10 flex flex-col'>
         {videos.map((video) => (
           <DetailVideoCard key={Object.entries(video.id)[1][1]} video={video} />
