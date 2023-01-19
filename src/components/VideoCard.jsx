@@ -13,20 +13,11 @@ const VideoCard = ({ video }) => {
   const { channelTitle, publishedAt, thumbnails, title } = video.snippet;
   return (
     <li className='cursor-pointer grid gap-4'>
-<<<<<<< HEAD
-      <img src={thumbnails.standard.url} className='rounded-lg overflow-hidden h-fit' />
-
-      <div>
-        <img />
-        <div className='grid gap-2 text-white'>
-          <p className='line-clamp-3 leading-6 text-white'>{title}</p>
-=======
       <img src={thumbnails.standard.url} />
       <div>
         <img />
         <div className='grid gap-2'>
           <p className='line-clamp-3 leading-6'>{title}</p>
->>>>>>> 380d58b62027542451429f8e408b07505e265d32
           <p>{channelTitle}</p>
           <p>조회수 {dayjs().to(dayjs(publishedAt))}</p>
         </div>
@@ -36,8 +27,6 @@ const VideoCard = ({ video }) => {
 };
 
 export default VideoCard;
-<<<<<<< HEAD
-=======
 
 // 디테일페이지 비디오카드
 export const DetailVideoCard = ({ video }) => {
@@ -62,4 +51,3 @@ export const DetailVideoCard = ({ video }) => {
     </li>
   );
 };
->>>>>>> 380d58b62027542451429f8e408b07505e265d32

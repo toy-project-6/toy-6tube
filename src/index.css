@@ -138,3 +138,10 @@ g {
 body {
   background-color: black;
 }
+html,
+body,
+#root {
+  min-height: 100%;
+  height: max-content;
+  position: relative;
+}
