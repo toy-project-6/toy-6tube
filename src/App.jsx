@@ -6,6 +6,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Home from './pages/Home';
 import Search from './pages/Search';
 import MovieDetail from './pages/MovieDetail';
+import ChannelDetail from './pages/ChannelDetail';
 
 function App() {
   const [isFolded, setIsFolded] = useState(false);
@@ -19,6 +20,7 @@ function App() {
           <Route path='/' element={<Home />} />
           <Route path='/search' element={<Search />} />
           <Route path='/detail/:id' element={<MovieDetail />} />
+          <Route path='/channel/:channelId' element={<ChannelDetail />} />
         </Routes>
       </div>
     </BrowserRouter>
