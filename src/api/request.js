@@ -18,7 +18,7 @@ export const getMostPopularVideos = async () => {
   return response.data.items;
 };
 
-export const related = async (videoId) => {
+export const getRelatedVideos = async (videoId) => {
   const response = await instance.get('/search', {
     params: {
       part: 'snippet',
