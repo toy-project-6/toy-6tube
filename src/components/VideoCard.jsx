@@ -16,7 +16,15 @@ dayjs.locale('ko');
 const VideoCard = ({ video, chVideoId, type }) => {
   const { channelId, channelTitle, publishedAt, thumbnails, title } = video.snippet;
   //channelDetailPage의 경우 videoId를 불러오는 api 경로가 달라 타입을 지정해 chVideoId로 아이디를 받아옴
-  const videoId = type === 'channel' ? chVideoId : video.id;
+  //searchPage의 경우에도 마찬가지
+  let videoId = '';
+  if (type === 'channel') {
+    videoId = chVideoId;
+  } else if (type === 'search') {
+    videoId = video.id.videoId;
+  } else {
+    videoId = video.id;
+  }
   const [viewCount, setViewCount] = useState(0);
   const [channelData, setChannelData] = useState([]);
 
