@@ -13,7 +13,7 @@ const VideoCard = ({ video }) => {
   const { channelTitle, publishedAt, thumbnails, title } = video.snippet;
   return (
     <li className='cursor-pointer grid gap-4'>
-      <img src={thumbnails.standard.url} />
+      <img src={thumbnails.standard ? thumbnails.standard.url : thumbnails.high.url} />
       <div>
         <img />
         <div className='grid gap-2'>
