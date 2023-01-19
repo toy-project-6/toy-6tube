@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react'
+import React, { useEffect, useState } from 'react';
 import { getViewCount, getChannelImg } from '../api/request';
 import {BsDot} from 'react-icons/bs'
 import {BiDotsVerticalRounded} from 'react-icons/bi'
@@ -9,6 +9,7 @@ import { useNavigate, useLocation } from 'react-router-dom';
 import numberToKorean from '../util/numberToKorean';
 import HoverVideo from './HoverVideo';
 import VideoCardInfo from './VideoCardInfo';
+import * as ReactTooltip from 'react-tooltip';
 
 //발행날짜 라이브러리
 dayjs.extend(relativeTime);
@@ -17,7 +18,16 @@ dayjs.locale('ko');
 const VideoCard = ({video, chVideoId, type}) => {
   const {thumbnails} = video.snippet
   //channelDetailPage의 경우 videoId를 불러오는 api 경로가 달라 타입을 지정해 chVideoId로 아이디를 받아옴
-  const videoId = type ==='channel'? chVideoId : video.id
+    //searchPage의 경우에도 마찬가지
+    let videoId = '';
+    if (type === 'channel') {
+      videoId = chVideoId;
+    } else if (type === 'search') {
+      videoId = video.id.videoId;
+    } else {
+      videoId = video.id;
+    }
+  // const videoId = type ==='channel'? chVideoId : video.id
   const [channelData, setChannelData] = useState([])
   const [hover, setHover] = useState(false)
   const related = type === 'relatedVideo'

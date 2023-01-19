@@ -3,13 +3,14 @@ import { related } from '../api/request';
 import { datas } from '../../public/datas';
 import VideoCard from './VideoCard';
 
-const RelatedVideos = () => {
+const RelatedVideos = (id) => {
   const [videos, setVideos] = useState([]);
   useEffect(() => {
-    // related('HO6cbtdmkIc').then((res) => {
+    // related('kZlstKZjVxw').then((res) => {
     //   setVideos(res);
     // });
-    // console.log(datas);
+
+    console.log(datas);
     setVideos(datas);
   }, []);
 
