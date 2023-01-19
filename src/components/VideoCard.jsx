@@ -31,8 +31,12 @@ export default VideoCard;
 // 디테일페이지 비디오카드
 export const DetailVideoCard = ({ video }) => {
   const { channelTitle, publishedAt, thumbnails, title } = video.snippet;
+  console.log(video);
+
+  const handleClick = () => {};
+
   return (
-    <li className='cursor-pointer flex gap-4'>
+    <li className='cursor-pointer hidden gap-4 lg:flex'>
       <img
         src={thumbnails.standard.url}
         className='min-w-[168px] h-[94px] object-cover rounded-lg'

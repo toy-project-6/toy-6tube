@@ -9,19 +9,17 @@ const RelatedVideos = () => {
     // related('HO6cbtdmkIc').then((res) => {
     //   setVideos(res);
     // });
-    console.log(datas);
+    // console.log(datas);
     setVideos(datas);
   }, []);
 
   return (
     <div className='w-[402px] absolute right-0 pr-[24px]'>
-      <div className='gap-[8px] columns-10 flex flex-col'>
+      <ul className='gap-[8px] columns-10 flex flex-col'>
         {videos.map((video) => (
-          <ul key={Object.entries(video.id)[1][1]}>
-            <DetailVideoCard video={video} />
-          </ul>
+          <DetailVideoCard key={Object.entries(video.id)[1][1]} video={video} />
         ))}
-      </div>
+      </ul>
     </div>
   );
 };
