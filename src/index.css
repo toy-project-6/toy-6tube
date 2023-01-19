@@ -140,3 +140,9 @@ g {
 body {
   background-color: black;
 }
+
+.tooltip {
+  background-color: #585858;
+  left: 0px !important;
+  font-weight: 500;
+}
