@@ -43,8 +43,8 @@ const VideoCardInfo = ({ video, videoId, type }) => {
           id={videoId}
           className={
             related
-              ? 'w-30 overflow-hidden text-ellipsis text-white text-sm leading-5 line-clamp-1 h-5'
-              : 'text-white line-clamp-2 leading-5 font-bold'
+              ? 'w-30 overflow-hidden text-ellipsis text-white text-sm leading-5 line-clamp-2 h-10'
+              : 'text-white line-clamp-2 leading-5 font-medium'
           }
         >
           {title}
@@ -53,18 +53,21 @@ const VideoCardInfo = ({ video, videoId, type }) => {
           id={'channel' + videoId}
           data-tooltip-content={channelTitle}
           onClick={handleClick}
-          className='text-sm font-semibold text-zinc-300 hover:text-white'
+          className={
+            related
+              ? 'text-[12px] text-zinc-300 hover:text-white'
+              : 'text-sm text-zinc-300 hover:text-white'
+          }
         >
           {channelTitle}
         </p>
         <Tooltip
           anchorId={'channel' + videoId}
           data-toolip-place='top'
-          data-tooltip-variant='success'
           noArrow
           className='tooltip absolute w-fit z-50 bg-[#696969] text-white'
         ></Tooltip>
-        <p className='text-xs flex font-semibold text-zinc-300'>
+        <p className={related ? 'text-[12px] flex text-zinc-300' : 'text-sm flex text-zinc-300'}>
           조회수 {viewCount && numberToKorean(viewCount)}회 <BsDot />{' '}
           {dayjs().to(dayjs(publishedAt))}
         </p>
