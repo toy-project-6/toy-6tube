@@ -1,6 +1,5 @@
 import axios from 'axios';
 
-
 const instance = axios.create({
   baseURL: 'https://youtube.googleapis.com/youtube/v3',
   params: {
@@ -29,5 +28,17 @@ export const related = async (videoId) => {
     },
   });
   console.log(response);
+  return response.data.items;
+};
+
+export const search = async (query) => {
+  const response = await instance.get('/search', {
+    params: {
+      part: 'snippet',
+      maxResults: '25',
+      q: query,
+      type: 'video',
+    },
+  });
   return response.data.items;
 };
