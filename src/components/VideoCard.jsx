@@ -27,3 +27,31 @@ const VideoCard = ({ video }) => {
 };
 
 export default VideoCard;
+
+// 디테일페이지 비디오카드
+export const DetailVideoCard = ({ video }) => {
+  const { channelTitle, publishedAt, thumbnails, title } = video.snippet;
+  console.log(video);
+
+  const handleClick = () => {};
+
+  return (
+    <li className='cursor-pointer hidden gap-4 lg:flex'>
+      <img
+        src={thumbnails.standard.url}
+        className='min-w-[168px] h-[94px] object-cover rounded-lg'
+      />
+      <div>
+        <div className='w-[202px]'>
+          <p className='text-[14px] text-[#f1f1f1] h-[40px] overflow-hidden text-ellipsis'>
+            {title}
+          </p>
+          <p className='text-[12px] leading-4 text-[#AAAAAA] '>{channelTitle}</p>
+          <p className='text-[12px] leading-4 text-[#AAAAAA] '>
+            조회수 {'100만'}회 • {dayjs().to(dayjs(publishedAt))}
+          </p>
+        </div>
+      </div>
+    </li>
+  );
+};
