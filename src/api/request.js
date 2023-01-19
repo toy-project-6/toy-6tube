@@ -41,6 +41,15 @@ export const getChannelImg = async (channelId) => {
   return response.data.items[0].snippet.thumbnails.default.url;
 };
 
+export const getChannelBanner = async (channelId) => {
+  const response = await instance.get('/channelBanners.insert', {
+    params: {
+      id: channelId,
+    },
+  });
+  return response;
+};
+
 export const getChannelData = async (channelId) => {
   const response = await instance.get('/channels', {
     params: {

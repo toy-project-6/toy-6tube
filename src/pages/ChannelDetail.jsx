@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react'
 import { useLocation } from 'react-router-dom'
-import { getChannelData, getSubscriberInfo, getPlayListId, getPlayListItems } from '../api/request';
+import { getChannelData, getChannelBanner, getSubscriberInfo, getPlayListId, getPlayListItems } from '../api/request';
 import VideoCard from '../components/VideoCard';
 
 const ChannelDetail = () => {
@@ -16,16 +16,11 @@ const ChannelDetail = () => {
       .then(data => getPlayListItems(data))
       .then(data => setPlayListItems(data))
     getSubscriberInfo(channelId).then(data => setSubscriberCount(data))
+    // getChannelBanner(channelId).then(data => console.log('channelBanner', data))
   }, [])
 
-  // useEffect(() => {
-  //   getPlayListItems(playListId).then(data => {setPlayListItems(data)})
-  // }, [])
-
-  console.log('playListItems', playListItems)
-
   return (
-    <div className='p-4'>
+    <div className='p-4 mt-16 text-white'>
      {
      channelData && (
         <div className='flex gap-7 mb-8'>
@@ -33,7 +28,7 @@ const ChannelDetail = () => {
             <div className='grid gap-0.5'>
               <p className='text-xl font-bold'>{channelData.localized.title}</p>
               <p className='text-slate-400'>{subscriberCount}명</p>
-              <p className='leading-7 '>{channelData.localized.description}</p>
+              <p className='leading-7'>{channelData.localized.description}</p>
             </div>
         </div>
         )
@@ -43,7 +38,7 @@ const ChannelDetail = () => {
         playListItems && (
           <ul className='grid grid-cols-3 gap-6 ml-6'>
             {
-              playListItems.map((playListItem) => <VideoCard key={playListItem.id} video={playListItem}/>)
+              playListItems.map((playListItem) => <VideoCard type='channel' key={playListItem.id} chVideoId={playListItem.snippet.resourceId.videoId} video={playListItem}/>)
             }
           </ul>
         )
