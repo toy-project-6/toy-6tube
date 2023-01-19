@@ -21,8 +21,9 @@ const Search = () => {
   }, [searchTerm]);
 
   return (
-    <ul className='w-full mt-16 p-4 grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-10'>
-      {videos && videos.map((video) => <VideoCard key={video.id.videoId} video={video} />)}
+    <ul className='w-full mt-16 p-4 grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 xs:grid-cols-1 gap-10'>
+      {videos &&
+        videos.map((video) => <VideoCard key={video.id.videoId} video={video} type='search' />)}
     </ul>
   );
 };

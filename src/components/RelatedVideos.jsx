@@ -1,15 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import { related } from '../api/request';
-import { DetailVideoCard } from './VideoCard';
 import { datas } from '../../public/datas';
+import VideoCard from './VideoCard';
 
-const RelatedVideos = () => {
+const RelatedVideos = (id) => {
   const [videos, setVideos] = useState([]);
   useEffect(() => {
-    // related('HO6cbtdmkIc').then((res) => {
+    // related('kZlstKZjVxw').then((res) => {
     //   setVideos(res);
     // });
-    // console.log(datas);
+
+    console.log(datas);
     setVideos(datas);
   }, []);
 
@@ -17,7 +18,8 @@ const RelatedVideos = () => {
     <div className=''>
       <ul className='gap-[8px] columns-10 flex flex-col'>
         {videos.map((video) => (
-          <DetailVideoCard key={Object.entries(video.id)[1][1]} video={video} />
+          // <DetailVideoCard key={Object.entries(video.id)[1][1]} video={video} />
+          <VideoCard type='relatedVideo' key={Object.entries(video.id)[1][1]} video={video} />
         ))}
       </ul>
     </div>
