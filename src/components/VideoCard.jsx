@@ -6,22 +6,22 @@ import dayjs from 'dayjs'
 import relativeTime from "dayjs/plugin/relativeTime";
 import "dayjs/locale/ko";
 import { useNavigate } from 'react-router-dom';
+import numberToKorean from '../util/numberToKorean';
 
 //발행날짜 라이브러리
 dayjs.extend(relativeTime);
 dayjs.locale("ko");
 
-const VideoCard = ({video}) => {
+const VideoCard = ({video, chVideoId, type}) => {
   const {channelId, channelTitle, publishedAt, thumbnails, title} = video.snippet
+  //channelDetailPage의 경우 videoId를 불러오는 api 경로가 달라 타입을 지정해 chVideoId로 아이디를 받아옴
+  const videoId = type ==='channel'? chVideoId : video.id
   const [viewCount, setViewCount] = useState(0)
   const [channelData, setChannelData] = useState([])
 
 useEffect(() => {
-  const videoId = video.id
   getViewCount(videoId).then((response) => setViewCount(response))
-
   getChannelImg(channelId).then(response => setChannelData(response))
-
 }, [])
 
 const navigate = useNavigate()
@@ -33,15 +33,15 @@ const handleClick = () => {
 
   return (
     <li className='cursor-pointer grid gap-4'>
-      <img src={thumbnails.standard.url}/>
+      <img onClick={() => {navigate(`/detail/${videoId}`, {state: {video}})}} src={thumbnails.medium.url} className='rounded-lg'/>
       <div className='flex gap-4'>
         <img src={channelData} className='rounded-full w-6 h-6'/>
         <div className='grid gap-0.5'>
-          <p className='line-clamp-2 leading-6 font-bold'>{title}</p>
+          <p className='text-white line-clamp-2 leading-6 font-bold'>{title}</p>
           <p onClick={handleClick} className='text-sm font-semibold text-zinc-300 hover:text-white'>{channelTitle}</p>
-          <p className='flex text-sm font-semibold text-zinc-300'>조회수 {viewCount}회 <BsDot/> {dayjs().to(dayjs(publishedAt))}</p>
+          <p className='text-xs flex font-semibold text-zinc-300'>조회수 {viewCount && (numberToKorean(viewCount))}회 <BsDot/> {dayjs().to(dayjs(publishedAt))}</p>
         </div>
-        <BiDotsVerticalRounded className='text-xl'/>
+        <BiDotsVerticalRounded className='w-5 h-5 flex-shrink-0 text-white'/>
       </div>
     </li>
   )
