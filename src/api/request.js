@@ -27,7 +27,6 @@ export const getRelatedVideos = async (videoId) => {
       type: 'video',
     },
   });
-  console.log(response);
   return response.data.items;
 };
 

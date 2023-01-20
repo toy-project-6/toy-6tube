@@ -25,6 +25,8 @@ const VideoCard = ({ video, chVideoId, type }) => {
     videoId = chVideoId;
   } else if (type === 'search' && location.pathname === '/search') {
     videoId = video.id.videoId;
+  } else if (type === 'relatedVideo') {
+    videoId = video.id.videoId;
   } else {
     videoId = video.id;
   }

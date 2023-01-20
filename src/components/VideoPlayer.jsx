@@ -13,7 +13,7 @@ const VideoPlayer = ({ id, state, channelData, subscriberCount, viewCount, type 
     <div className='flex flex-col gap-3 items-center px-2 grow'>
       <div className='relative w-full h-0 pt-[29rem]'>
         <iframe
-          id='player'
+          id='ytplayer'
           title='video'
           type='text/html'
           width='640'
@@ -25,7 +25,7 @@ const VideoPlayer = ({ id, state, channelData, subscriberCount, viewCount, type 
       </div>
 
       <div className='h-fit w-full text-[#f1f1f1]'>
-        <h2 className='text-xl font-semibold pb-2 text-[#f1f1f1]'>{title}</h2>
+        <h2 className='text-xl font-semibold pb-2 text-[#f1f1f1] cursor-pointer'>{title}</h2>
         <div className='flex justify-between items-center pb-5'>
           <div className='flex gap-3 items-center font-medium'>
             <img
@@ -34,7 +34,19 @@ const VideoPlayer = ({ id, state, channelData, subscriberCount, viewCount, type 
               className='rounded-full w-10 h-10 cursor-pointer'
             />
             <div>
-              <div className='text-base pb-1 cursor-pointer'>{channelTitle}</div>
+              <div
+                id='channelTitle'
+                data-tooltip-content={channelTitle}
+                className='text-base pb-1 cursor-pointer'
+              >
+                {channelTitle}
+              </div>
+              <Tooltip
+                anchorId='channelTitle'
+                place='top'
+                noArrow
+                className='w-fit z-10 bg-[#696969] text-white'
+              ></Tooltip>
               <div className='text-xs opacity-90 text-[#aaa]'>
                 구독자 {Number(subscriberCount).toLocaleString()}명
               </div>
