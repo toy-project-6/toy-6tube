@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react'
 import { useLocation } from 'react-router-dom'
 import { getChannelData, getSubscriberInfo, getPlayListId, getPlayListItems } from '../api/request';
-import VideoCard from '../components/VideoCard';
+import VideoCard from '../components/VideoCard/VideoCard';
 import numberToKorean from '../util/numberToKorean';
 
 const ChannelDetail = () => {

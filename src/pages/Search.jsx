@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import { search } from '../api/request';
-import VideoCard from '../components/VideoCard';
+import VideoCard from '../components/VideoCard/VideoCard';
 
 const Search = () => {
   const [videos, setVideos] = useState();

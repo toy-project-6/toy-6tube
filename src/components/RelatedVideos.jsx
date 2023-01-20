@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { related } from '../api/request';
 import { datas } from '../../public/datas';
-import VideoCard from './VideoCard';
+import VideoCard from './VideoCard/VideoCard';
 
 const RelatedVideos = (id) => {
   const [videos, setVideos] = useState([]);
