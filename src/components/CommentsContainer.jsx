@@ -3,18 +3,19 @@ import { commentDatas } from '../../public/commentData';
 import { getComments } from '../api/request';
 import Comment from './Comment';
 
-const CommentsContainer = () => {
+const CommentsContainer = ({ id }) => {
   const [comments, setComments] = useState([]);
   useEffect(() => {
-    // getComments(id).then((res) => {
-    //   setComments(res);
-    // });
-    console.log(commentDatas[0]);
-    setComments(commentDatas[0]);
+    getComments(id).then((res) => {
+      setComments(res);
+    });
+    // console.log(commentDatas[0]);
+    // setComments(commentDatas[0]);
   }, []);
 
-  const commentTest = commentDatas[0];
-  console.log(commentTest[0].snippet);
+  // const commentTest = commentDatas[0];
+  // console.log(commentTest[0].snippet);
+  console.log(comments);
 
   return (
     <div>
@@ -36,7 +37,7 @@ const CommentsContainer = () => {
         </div>
         <div className='mt-10 mb-[32px] px-2'>
           <ul className='gap-[8px] columns-10 flex flex-col'>
-            {commentTest.map((comment) => (
+            {comments?.map((comment) => (
               <Comment
                 key={comment.etag}
                 img={comment.snippet.topLevelComment.snippet.authorProfileImageUrl}

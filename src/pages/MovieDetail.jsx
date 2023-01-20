@@ -34,7 +34,7 @@ const MovieDetail = () => {
         />
         <CommentsContainer id={id} />
       </div>
-      <RelatedVideos />
+      <RelatedVideos id={id} />
     </div>
   );
 };
