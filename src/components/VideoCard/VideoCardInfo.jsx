@@ -39,7 +39,7 @@ const VideoCardInfo = ({ video, videoId, type }) => {
         }
       >
         <p
-          id={videoId}
+          id={videoId.videoId}
           className={
             related
               ? 'w-30 overflow-hidden text-ellipsis text-white text-sm leading-5 line-clamp-2 h-10'
@@ -49,7 +49,7 @@ const VideoCardInfo = ({ video, videoId, type }) => {
           {title}
         </p>
         <p
-          id={'channel' + videoId}
+          id={'channel' + videoId.videoId}
           data-tooltip-content={channelTitle}
           onClick={handleClick}
           className={
@@ -61,8 +61,8 @@ const VideoCardInfo = ({ video, videoId, type }) => {
           {channelTitle}
         </p>
         <Tooltip
-          anchorId={'channel' + videoId}
-          data-toolip-place='top'
+          anchorId={'channel' + videoId.videoId}
+          // data-toolip-place='top'
           noArrow
           className='tooltip absolute w-fit z-50 bg-[#696969] text-white'
         ></Tooltip>
@@ -77,4 +77,3 @@ const VideoCardInfo = ({ video, videoId, type }) => {
 };
 
 export default VideoCardInfo;
-

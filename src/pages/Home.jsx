@@ -6,7 +6,9 @@ import { datas } from '../../public/datas';
 const Home = () => {
   const [videos, setVideos] = useState();
   useEffect(() => {
-    getMostPopularVideos().then(data =>{setVideos(data)})
+    getMostPopularVideos().then((data) => {
+      setVideos(data);
+    });
     // setVideos(datas);
   }, []);
 
