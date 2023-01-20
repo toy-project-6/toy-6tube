@@ -6,12 +6,12 @@ import Comment from './Comment';
 const CommentsContainer = ({ id }) => {
   const [comments, setComments] = useState([]);
   useEffect(() => {
-    // getComments(id).then((res) => {
-    //   console.log(res);
-    //   setComments(res);
-    // });
+    getComments(id).then((res) => {
+      console.log(res);
+      setComments(res);
+    });
     // console.log(commentDatas[0]);
-    setComments(commentDatas[0]);
+    // setComments(commentDatas[0]);
   }, []);
 
   // const commentTest = commentDatas[0];
