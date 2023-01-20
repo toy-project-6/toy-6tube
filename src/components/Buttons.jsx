@@ -17,7 +17,7 @@ const Buttons = ({ setVideos, setType }) => {
           setClicked(buttonName);
           if (buttonName === '전체' || buttonName === '최근에 업로드된 동영상') {
             setType('');
-            setVideos(datas);
+            getMostPopularVideos().then((data) => setVideos(data));
             return;
           }
           setType('search');

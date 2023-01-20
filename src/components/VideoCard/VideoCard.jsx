@@ -14,7 +14,7 @@ dayjs.locale('ko');
 
 const VideoCard = ({ video, chVideoId, type }) => {
   const { thumbnails } = video.snippet;
-
+  // console.log(video);
   //channelDetailPage의 경우 videoId를 불러오는 api 경로가 달라 타입을 지정해 chVideoId로 아이디를 받아옴
   //searchPage의 경우에도 마찬가지
   let videoId = '';
