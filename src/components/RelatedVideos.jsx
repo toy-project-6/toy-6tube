@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { related } from '../api/request';
+import { getRelatedVideos } from '../api/request';
 import { datas } from '../../public/datas';
 import VideoCard from './VideoCard';
 
 const RelatedVideos = (id) => {
   const [videos, setVideos] = useState([]);
   useEffect(() => {
-    // related('kZlstKZjVxw').then((res) => {
+    // getRelatedVideos('kZlstKZjVxw').then((res) => {
     //   setVideos(res);
     // });
 

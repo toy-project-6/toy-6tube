@@ -137,7 +137,29 @@ g {
   stroke: currentColor;
 }
 body {
-  background-color: black;
+  background-color: #0f0f0f;
+}
+
+.tooltip {
+  background-color: #585858;
+  top: -6px !important;
+  left: 0px !important;
+  font-weight: 500;
+}
+
+body::-webkit-scrollbar {
+  width: 14px;
+  padding: 20px;
+}
+
+body::-webkit-scrollbar-thumb {
+  height: 10%;
+  background: #aaaaaa;
+  border: 3px #0f0f0f solid;
+  border-radius: 10px;
+}
+body::-webkit-scrollbar-track {
+  margin: 3px;
 }
 html,
 body,
