@@ -8,7 +8,7 @@ import { FiMoreHorizontal } from 'react-icons/fi';
 const VideoPlayer = ({ id, state, channelData, subscriberCount, viewCount }) => {
   const { channelTitle, description, publishedAt, tags, title } = state.video.snippet;
   return (
-    <div className='flex flex-col gap-3 items-center px-2 grow lg:w-9/12 xs:w-fit'>
+    <div className='flex flex-col gap-3 items-center px-2 grow'>
       <div className='relative w-full h-0 pt-[29rem]'>
         <iframe
           id='player'
@@ -32,7 +32,7 @@ const VideoPlayer = ({ id, state, channelData, subscriberCount, viewCount }) => 
               className='rounded-full w-10 h-10'
             />
             <div>
-              <div className='text-base'>{channelTitle}</div>
+              <div className='text-base pb-1'>{channelTitle}</div>
               <div className='text-xs opacity-90'>
                 구독자 {Number(subscriberCount).toLocaleString()}명
               </div>
@@ -41,7 +41,7 @@ const VideoPlayer = ({ id, state, channelData, subscriberCount, viewCount }) => 
               구독
             </button>
           </div>
-          <div className='hidden xl:flex items-center gap-2 h-fit'>
+          <div className='hidden xl:flex items-center gap-2 h-fit mt-3'>
             <div className='flex'>
               <button className='flex items-center gap-2 bg-[#272727] hover:bg-[#3d3d3d] h-9 text-xs py-2 px-4 rounded-l-3xl'>
                 <GoThumbsup className='w-4 h-4' />

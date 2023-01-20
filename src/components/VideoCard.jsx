@@ -26,7 +26,6 @@ const VideoCard = ({ video, chVideoId, type }) => {
   } else {
     videoId = video.id;
   }
-  console.log(video);
   // const videoId = type ==='channel'? chVideoId : video.id
   const [channelData, setChannelData] = useState([]);
   const [hover, setHover] = useState(false);
@@ -36,18 +35,8 @@ const VideoCard = ({ video, chVideoId, type }) => {
   const location = useLocation();
   const home = location.pathname === '/';
 
-  // const handleOver = () => {
-  //   setTimeout(() => {
-  //     setHover(true);
-  //   }, 1000);
-  // };
-
   return (
-    <li
-      // onMouseOver={handleOver}
-      // onMouseLeave={() => setHover(false)}
-      className={related ? 'hidden gap-4 lg:flex' : 'cursor-pointer grid gap-4'}
-    >
+    <li className={related ? 'hidden gap-4 lg:flex' : 'cursor-pointer grid gap-4'}>
       {/* {home && hover ? <HoverVideo video={video.snippet} videoId={videoId} chVideoId={chVideoId} type={type}/> : null} */}
       <img
         onClick={() => {
@@ -61,12 +50,7 @@ const VideoCard = ({ video, chVideoId, type }) => {
         }
       />
       {channelData && video ? (
-        <VideoCardInfo
-          video={video.snippet}
-          videoId={videoId.videoId}
-          chVideoId={chVideoId}
-          type={type}
-        />
+        <VideoCardInfo video={video.snippet} videoId={videoId} chVideoId={chVideoId} type={type} />
       ) : (
         ''
       )}

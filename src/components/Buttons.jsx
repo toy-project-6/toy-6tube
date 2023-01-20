@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { datas } from '../../public/datas';
-import { search } from '../api/request';
+import { getSearchVideos } from '../api/request';
 
 const Buttons = ({ setVideos, setType }) => {
   const [clicked, setClicked] = useState('전체');
@@ -15,15 +15,13 @@ const Buttons = ({ setVideos, setType }) => {
         className='bg-[#272727] hover:bg-[#3d3d3d] h-8 text-xs px-3 rounded-xl text-white'
         onClick={() => {
           setClicked(buttonName);
-          if (buttonName == '전체' || buttonName === '최근에 업로드된 동영상') {
-            console.log('전체');
+          if (buttonName === '전체' || buttonName === '최근에 업로드된 동영상') {
             setType('');
             setVideos(datas);
             return;
           }
-          console.log('서치');
           setType('search');
-          search(buttonName).then((data) => setVideos(data));
+          getSearchVideos(buttonName).then((data) => setVideos(data.items));
         }}
       >
         {buttonName}
@@ -32,7 +30,7 @@ const Buttons = ({ setVideos, setType }) => {
   };
 
   return (
-    <div className='flex p-4 gap-2'>
+    <div className='hidden md:flex p-4 gap-2'>
       <Button buttonName={'전체'} clicked={clicked} />
       <Button buttonName={'실시간'} clicked={clicked} />
       <Button buttonName={'음악'} clicked={clicked} />

@@ -38,7 +38,7 @@ const CommentsContainer = () => {
           <ul className='gap-[8px] columns-10 flex flex-col'>
             {commentTest.map((comment) => (
               <Comment
-                id={comment.etag}
+                key={comment.etag}
                 img={comment.snippet.topLevelComment.snippet.authorProfileImageUrl}
                 name={comment.snippet.topLevelComment.snippet.authorDisplayName}
                 publishedAt={comment.snippet.topLevelComment.snippet.publishedAt}

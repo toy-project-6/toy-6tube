@@ -48,8 +48,8 @@ const Header = ({ isFolded, setIsFolded }) => {
                   onChange={onChange}
                   name='search'
                   id='videoSearch'
-                  placeholder='  Search'
-                  className='rounded-full w-72 h-10 placeholder:italic placeholder:text-slate-400 pl-1 text-xs bg-transparent border border-zinc-700'
+                  placeholder='Search'
+                  className='rounded-full w-72 h-10 placeholder:italic placeholder:text-slate-400 pl-3 text-xs bg-transparent border border-zinc-700'
                 />
                 <button type='submit' className=' absolute right-2'>
                   <AiOutlineSearch className='w-5 h-5 fill-slate-700' />

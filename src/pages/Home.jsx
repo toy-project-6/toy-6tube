@@ -3,21 +3,21 @@ import { getMostPopularVideos } from '../api/request';
 import VideoCard from '../components/VideoCard';
 import { datas } from '../../public/datas';
 import Buttons from '../components/Buttons';
+import netflix from '../assets/netflix.png';
 
 const Home = () => {
   const [videos, setVideos] = useState();
   const [type, setType] = useState('');
   useEffect(() => {
-    // getMostPopularVideos().then((data) => {
-    //   setVideos(data);
-    // });
-    setVideos(datas);
+    getMostPopularVideos().then((data) => {
+      setVideos(data);
+    });
   }, []);
 
   return (
     <>
       <div className='flex flex-col m-6'>
-        <div className='h-fit w-80 p-4'>
+        <div className='h-fit w-full p-4 flex flex-row gap-5'>
           <iframe
             id='player'
             title='video'
@@ -25,9 +25,12 @@ const Home = () => {
             width='100%'
             height='100%'
             allowFullScreen
-            src={`http://www.youtube.com/embed/SFO5eU4C4R4`}
-            className=' w-[63rem] h-72 rounded-xl overflow-hidden'
+            src={`http://www.youtube.com/embed/XFiD0I0Ghe8`}
+            className='w-full md:w-2/5 h-full rounded-3xl overflow-hidden'
           />
+          <div className='hidden md:block md:w-3/5 h-full rounded-3xl overflow-hidden'>
+            <img src={netflix} alt='넷플릭스' className='' />
+          </div>
         </div>
 
         <Buttons setVideos={setVideos} setType={setType} />
