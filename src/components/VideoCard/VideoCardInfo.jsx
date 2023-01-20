@@ -7,6 +7,7 @@ import relativeTime from 'dayjs/plugin/relativeTime';
 import 'dayjs/locale/ko';
 import { useNavigate } from 'react-router-dom';
 import { Tooltip } from 'react-tooltip';
+import 'react-tooltip/dist/react-tooltip.css';
 import numberToKorean from '../../util/numberToKorean';
 
 //발행날짜 라이브러리
@@ -41,7 +42,7 @@ const VideoCardInfo = ({ video, videoId, type }) => {
         }
       >
         <p
-          id={videoId?.videoId}
+          id={videoId.videoId}
           className={
             related
               ? 'w-30 overflow-hidden text-ellipsis text-white text-sm leading-5 line-clamp-2 h-10'
