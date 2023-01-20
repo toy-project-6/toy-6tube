@@ -7,7 +7,6 @@ https://docs.google.com/document/d/1vHlO8lgIo1oXBYiecpE8TbG2tHnr3Hmv25UxK_7a5_g/
 
 수행 기간: 오늘 ~ 2023.01.20(금) 까지
 리뷰 기간:
-리뷰어 1차:  2023.01.25~ 2023.01.27 까지
 제출 방법:
 main 혹은 다른 사람의 브랜치로 절대 병합하지 않도록 주의하세요!
 혹시 문제가 발생한 경우, 바로 강사에게 알려주세요!
