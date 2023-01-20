@@ -39,7 +39,7 @@ const VideoCardInfo = ({ video, videoId, type }) => {
         }
       >
         <p
-          id={videoId.videoId}
+          id={videoId?.videoId}
           className={
             related
               ? 'w-30 overflow-hidden text-ellipsis text-white text-sm leading-5 line-clamp-2 h-10'

@@ -128,7 +128,7 @@ export const getComments = async (videoId) => {
       part: 'snippet',
       videoId: videoId,
     },
-  })
-  console.log(response.data.items);
-  return response.data.items
-}
+  });
+  // console.log(response.data.items);
+  return response.data.items;
+};
