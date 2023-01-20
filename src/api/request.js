@@ -31,16 +31,17 @@ export const getRelatedVideos = async (videoId) => {
   return response.data.items;
 };
 
-export const search = async (query) => {
+export const getSearchVideos = async (query, nextPageToken) => {
   const response = await instance.get('/search', {
     params: {
       part: 'snippet',
-      maxResults: '25',
+      maxResults: '16',
       q: query,
       type: 'video',
+      pageToken: nextPageToken && nextPageToken,
     },
   });
-  return response.data.items;
+  return response.data;
 };
 export const getViewCount = async (videoId) => {
   const response = await instance.get('/videos', {
