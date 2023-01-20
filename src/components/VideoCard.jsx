@@ -5,7 +5,7 @@ import { BiDotsVerticalRounded } from 'react-icons/bi';
 import dayjs from 'dayjs';
 import relativeTime from 'dayjs/plugin/relativeTime';
 import 'dayjs/locale/ko';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import numberToKorean from '../util/numberToKorean';
 import HoverVideo from './HoverVideo';
 import VideoCardInfo from './VideoCardInfo';
@@ -46,7 +46,7 @@ const VideoCard = ({ video, chVideoId, type }) => {
     <li
       onMouseOver={handleOver}
       onMouseLeave={() => setHover(false)}
-      className={related ? 'hidden gap-4 lg:flex' : 'cursor-pointer grid gap-4'}
+      className={related ? 'hidden gap-4 lg:flex w-36' : 'cursor-pointer grid gap-4'}
     >
       {/* {home && hover ? <HoverVideo video={video.snippet} videoId={videoId} chVideoId={chVideoId} type={type}/> : null} */}
       <img

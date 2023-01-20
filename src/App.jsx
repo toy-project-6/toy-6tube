@@ -14,7 +14,7 @@ function App() {
   return (
     <BrowserRouter className='h-full'>
       <Header isFolded={isFolded} setIsFolded={setIsFolded} />
-      <div className='flex h-fit w-full pt-14'>
+      <div className='flex h-fit pt-14'>
         <div className='min-w-fit'>
           <Nav isFolded={isFolded} />
         </div>
