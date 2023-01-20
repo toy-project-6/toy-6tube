@@ -7,7 +7,6 @@ import HoverVideo from '../HoverVideo';
 import VideoCardInfo from './VideoCardInfo';
 import * as ReactTooltip from 'react-tooltip';
 import VideoDuration from './VideoDuration';
-import { startTransition } from 'react';
 
 //발행날짜 라이브러리
 dayjs.extend(relativeTime);

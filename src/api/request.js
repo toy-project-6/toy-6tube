@@ -18,7 +18,7 @@ export const getMostPopularVideos = async () => {
   return response.data.items;
 };
 
-export const related = async (videoId) => {
+export const getRelatedVideos = async (videoId) => {
   const response = await instance.get('/search', {
     params: {
       part: 'snippet',
@@ -31,16 +31,17 @@ export const related = async (videoId) => {
   return response.data.items;
 };
 
-export const search = async (query) => {
+export const getSearchVideos = async (query, nextPageToken) => {
   const response = await instance.get('/search', {
     params: {
       part: 'snippet',
-      maxResults: '25',
+      maxResults: '16',
       q: query,
       type: 'video',
+      pageToken: nextPageToken && nextPageToken,
     },
   });
-  return response.data.items;
+  return response.data;
 };
 
 export const getViewCount = async (videoId) => {
@@ -120,3 +121,14 @@ export const getPlayListItems = async (playListId) => {
     .catch((error) => console.log(error));
   return response.data.items;
 };
+
+export const getComments = async (videoId) => {
+  const response = await instance.get('/commentThreads', {
+    params: {
+      part: 'snippet',
+      videoId: videoId,
+    },
+  })
+  console.log(response.data.items[0]);
+  return response.data.items[0]
+}
