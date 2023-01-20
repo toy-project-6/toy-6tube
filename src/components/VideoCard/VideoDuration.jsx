@@ -12,7 +12,7 @@ const VideoDuration = ({videoId}) => {
   }, [])
 
   return (
-    <span className='bg-black text-white text-sm absolute top-28 p-2 right-0'>
+    <span className='bg-black text-white text-sm absolute p-2 bottom-0 right-0'>
      {videoLength && (parseDuration(videoLength))}
     </span>
   )
