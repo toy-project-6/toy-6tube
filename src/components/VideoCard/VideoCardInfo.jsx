@@ -19,12 +19,14 @@ const VideoCardInfo = ({ video, videoId, type }) => {
   const [viewCount, setViewCount] = useState(0);
   const [channelImg, setChannelImg] = useState('');
   const related = type === 'relatedVideo';
-
+  if (typeof videoId === 'object') {
+    videoId = videoId.videoId;
+  }
   useEffect(() => {
     getViewCount(videoId).then((response) => setViewCount(response));
     getChannelImg(channelId).then((response) => setChannelImg(response));
   }, []);
-
+  console.log(videoId, viewCount);
   const navigate = useNavigate();
   //navigate로 부가적인 객체를 전달할 때, 두번째 인자에 객체를 전달하면 됨
   const handleClick = () => {
