@@ -45,7 +45,7 @@ const VideoCardInfo = ({ video, videoId, type }) => {
           id={videoId}
           className={
             related
-              ? 'w-30 overflow-hidden text-ellipsis text-white text-sm leading-5 line-clamp-2 h-10'
+              ? 'w-30 overflow-hidden text-ellipsis text-white text-sm leading-5 line-clamp-2 max-h-10'
               : 'text-white line-clamp-2 leading-5 font-medium'
           }
         >
