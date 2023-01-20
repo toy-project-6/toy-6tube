@@ -18,7 +18,7 @@ const Search = () => {
       setVideos(data.items);
       setNextPageToken(data.nextPageToken);
     });
-    infinityScroll();
+    // infinityScroll();
   }, [query]);
 
   const infinityScroll = () => {
