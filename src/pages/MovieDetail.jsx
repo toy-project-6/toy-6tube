@@ -4,6 +4,8 @@ import { useLocation } from 'react-router-dom';
 import RelatedVideos from '../components/RelatedVideos';
 import { getChannelData, getSubscriberInfo, getViewCount } from '../api/request';
 import VideoPlayer from '../components/VideoPlayer';
+import Comments from '../components/Comment';
+import CommentsContainer from '../components/CommentsContainer';
 
 const MovieDetail = () => {
   window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -21,14 +23,17 @@ const MovieDetail = () => {
   }, []);
 
   return (
-    <div className='h-fit w-full mt-5 m-4 flex gap-5 bg-black text-white'>
-      <VideoPlayer
-        id={id}
-        state={state}
-        viewCount={viewCount}
-        channelData={channelData}
-        subscriberCount={subscriberCount}
-      />
+    <div className='h-fit w-full mt-5 m-4 flex gap-5 text-white'>
+      <div>
+        <VideoPlayer
+          id={id}
+          state={state}
+          viewCount={viewCount}
+          channelData={channelData}
+          subscriberCount={subscriberCount}
+        />
+        <CommentsContainer id={id} />
+      </div>
       <RelatedVideos />
     </div>
   );

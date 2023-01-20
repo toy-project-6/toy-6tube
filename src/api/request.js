@@ -107,3 +107,14 @@ export const getPlayListItems = async (playListId) => {
     .catch((error) => console.log(error));
   return response.data.items;
 };
+
+export const getComments = async (videoId) => {
+  const response = await instance.get('/commentThreads', {
+    params: {
+      part: 'snippet',
+      videoId: videoId,
+    },
+  })
+  console.log(response.data.items[0]);
+  return response.data.items[0]
+}
