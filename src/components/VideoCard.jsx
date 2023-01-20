@@ -26,15 +26,6 @@ const VideoCard = ({ video, chVideoId, type }) => {
   } else {
     videoId = video.id;
   }
-  //searchPage의 경우에도 마찬가지
-  let videoId = '';
-  if (type === 'channel') {
-    videoId = chVideoId;
-  } else if (type === 'search') {
-    videoId = video.id.videoId;
-  } else {
-    videoId = video.id;
-  }
   // const videoId = type ==='channel'? chVideoId : video.id
   const [channelData, setChannelData] = useState([]);
   const [hover, setHover] = useState(false);

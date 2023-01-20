@@ -69,8 +69,8 @@ const VideoPlayer = ({ id, state, channelData, subscriberCount, viewCount }) => 
           <div className='text-sm flex gap-2 font-semibold'>
             <p>조회수 {Number(viewCount).toLocaleString()}회</p>
             <p>{dayjs().to(dayjs(publishedAt))}</p>
-            <p className='opacity-25'>#{tags[0]}</p>
-            <p className='opacity-25'>#{tags[1]}</p>
+            <p className='opacity-25'>#{tags && tags[0]}</p>
+            <p className='opacity-25'>#{tags && tags[1]}</p>
           </div>
           <br />
           <div className='text-xs font-light'>{description}</div>
