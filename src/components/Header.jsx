@@ -25,7 +25,7 @@ const Header = ({ isFolded, setIsFolded }) => {
   };
   return (
     <header>
-      <div className='mx-auto w-full fixed z-10 px-6 h-14 bg-[#0f0f0f]'>
+      <div className='mx-auto w-full fixed z-10 px-6 h-14 bg-[#0f0f0f] border-solid border-b border-gray-600 text-white'>
         <div className='h-full flex items-center justify-between'>
           <div className='flex justify-between w-32'>
             <AiOutlineMenu
@@ -48,8 +48,8 @@ const Header = ({ isFolded, setIsFolded }) => {
                   onChange={onChange}
                   name='search'
                   id='videoSearch'
-                  placeholder='  Search'
-                  className='rounded-full w-72 h-10 placeholder:italic placeholder:text-slate-400 pl-1 text-xs bg-transparent border border-zinc-700'
+                  placeholder='Search'
+                  className='rounded-full w-72 h-10 placeholder:italic placeholder:text-slate-400 pl-3 text-xs bg-transparent border border-zinc-700'
                 />
                 <button type='submit' className=' absolute right-2'>
                   <AiOutlineSearch className='w-5 h-5 fill-slate-700' />

@@ -8,19 +8,21 @@ import { FiMoreHorizontal } from 'react-icons/fi';
 const VideoPlayer = ({ id, state, channelData, subscriberCount, viewCount }) => {
   const { channelTitle, description, publishedAt, tags, title } = state.video.snippet;
   return (
-    <div className='flex flex-col gap-3 items-center px-2'>
-      <div className='w-full'>
+    <div className='flex flex-col gap-3 items-center px-2 grow'>
+      <div className='relative w-full h-0 pt-[29rem]'>
         <iframe
           id='player'
           title='video'
           type='text/html'
-          width='100%'
-          height='540'
+          width='640'
+          height='360'
+          allowFullScreen
           src={`http://www.youtube.com/embed/${id}`}
+          className='absolute top-0 left-0 w-full h-full'
         />
       </div>
 
-      <div className='h-fit'>
+      <div className='h-fit w-full'>
         <h2 className='text-xl font-semibold pb-2'>{title}</h2>
         <div className='flex justify-between items-center pb-5'>
           <div className='flex gap-3 items-center font-medium'>
@@ -30,7 +32,7 @@ const VideoPlayer = ({ id, state, channelData, subscriberCount, viewCount }) => 
               className='rounded-full w-10 h-10'
             />
             <div>
-              <div className='text-base'>{channelTitle}</div>
+              <div className='text-base pb-1'>{channelTitle}</div>
               <div className='text-xs opacity-90'>
                 구독자 {Number(subscriberCount).toLocaleString()}명
               </div>
@@ -39,7 +41,7 @@ const VideoPlayer = ({ id, state, channelData, subscriberCount, viewCount }) => 
               구독
             </button>
           </div>
-          <div className='hidden xl:flex items-center gap-2 h-fit'>
+          <div className='hidden xl:flex items-center gap-2 h-fit mt-3'>
             <div className='flex'>
               <button className='flex items-center gap-2 bg-[#272727] hover:bg-[#3d3d3d] h-9 text-xs py-2 px-4 rounded-l-3xl'>
                 <GoThumbsup className='w-4 h-4' />
