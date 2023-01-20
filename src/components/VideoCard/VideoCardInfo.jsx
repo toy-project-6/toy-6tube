@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react';
-import { getViewCount, getChannelImg } from '../api/request';
+import { getViewCount, getChannelImg } from '../../api/request';
 import { BsDot } from 'react-icons/bs';
 import { BiDotsVerticalRounded } from 'react-icons/bi';
 import dayjs from 'dayjs';
 import relativeTime from 'dayjs/plugin/relativeTime';
 import 'dayjs/locale/ko';
 import { useNavigate } from 'react-router-dom';
-import numberToKorean from '../util/numberToKorean';
 import { Tooltip } from 'react-tooltip';
+import numberToKorean from '../../util/numberToKorean';
 
 //발행날짜 라이브러리
 dayjs.extend(relativeTime);
@@ -31,7 +31,7 @@ const VideoCardInfo = ({ video, videoId, type }) => {
   };
 
   return (
-    <div className='flex gap-4'>
+    <div className='flex justify-around gap-4 relative'>
       <img src={channelImg} className={related ? 'hidden' : 'rounded-full w-6 h-6'} />
       <div
         className={
@@ -64,7 +64,7 @@ const VideoCardInfo = ({ video, videoId, type }) => {
           anchorId={'channel' + videoId}
           data-toolip-place='top'
           noArrow
-          className='tooltip absolute w-fit z-50 bg-[#696969] text-white'
+          className='tooltip absolute w-fit z-10 bg-[#696969] text-white'
         ></Tooltip>
         <p className={related ? 'text-[12px] flex text-zinc-300' : 'text-sm flex text-zinc-300'}>
           조회수 {viewCount && numberToKorean(viewCount)}회 <BsDot />{' '}
@@ -77,3 +77,4 @@ const VideoCardInfo = ({ video, videoId, type }) => {
 };
 
 export default VideoCardInfo;
+

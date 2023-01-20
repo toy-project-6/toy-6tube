@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { getMostPopularVideos } from '../api/request';
-import VideoCard from '../components/VideoCard';
+import VideoCard from '../components/VideoCard/VideoCard';
 import { datas } from '../../public/datas';
 import Buttons from '../components/Buttons';
 import netflix from '../assets/netflix.png';
@@ -12,6 +12,7 @@ const Home = () => {
     getMostPopularVideos().then((data) => {
       setVideos(data);
     });
+    // setVideos(datas);
   }, []);
 
   return (

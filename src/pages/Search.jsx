@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import { getSearchVideos } from '../api/request';
-import VideoCard from '../components/VideoCard';
+import VideoCard from '../components/VideoCard/VideoCard';
 
 const Search = () => {
   window.scrollTo({ top: 0, behavior: 'smooth' });
