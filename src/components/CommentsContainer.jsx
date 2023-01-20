@@ -10,7 +10,7 @@ const CommentsContainer = ({ id }) => {
     //   console.log(res);
     //   setComments(res);
     // });
-    console.log(commentDatas[0]);
+    // console.log(commentDatas[0]);
     setComments(commentDatas[0]);
   }, []);
 

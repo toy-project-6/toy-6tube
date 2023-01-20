@@ -26,6 +26,7 @@ const Comment = ({ id, img, name, publishedAt, updatedAt, text, likeCount }) => 
               data-tooltip-content='좋아요'
               data-tooltip-place='bottom'
               className='mr-2 w-5 h-5 my-1.5 cursor-pointer'
+              onMouse
             />
             <Tooltip
               anchorId={'thumbUp' + id}

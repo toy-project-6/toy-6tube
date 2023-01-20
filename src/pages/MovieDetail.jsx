@@ -16,6 +16,7 @@ const MovieDetail = () => {
   const [channelData, setChannelData] = useState({});
   const [subscriberCount, setSubscriberCount] = useState(0);
 
+  console.log('state', state);
   useEffect(() => {
     getViewCount(id).then((response) => setViewCount(response));
     getChannelData(channelId).then((response) => setChannelData(response));
@@ -25,13 +26,15 @@ const MovieDetail = () => {
   return (
     <div className='h-fit w-full mt-5 m-4 flex gap-5 text-white'>
       <div>
-        <VideoPlayer
-          id={id}
-          state={state}
-          viewCount={viewCount}
-          channelData={channelData}
-          subscriberCount={subscriberCount}
-        />
+        {state && (
+          <VideoPlayer
+            id={id}
+            state={state}
+            viewCount={viewCount}
+            channelData={channelData}
+            subscriberCount={subscriberCount}
+          />
+        )}
         <CommentsContainer id={id} />
       </div>
       <RelatedVideos />
