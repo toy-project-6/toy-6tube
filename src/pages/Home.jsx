@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { getMostPopularVideos } from '../api/request';
-import VideoCard from '../components/VideoCard';
+import VideoCard from '../components/VideoCard/VideoCard';
 import { datas } from '../../public/datas';
 
 const Home = () => {
   const [videos, setVideos] = useState();
   useEffect(() => {
-    // getMostPopularVideos().then(data =>{setVideos(data)})
-    setVideos(datas);
+    getMostPopularVideos().then(data =>{setVideos(data)})
+    // setVideos(datas);
   }, []);
 
   return (

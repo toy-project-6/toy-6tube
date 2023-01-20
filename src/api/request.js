@@ -43,6 +43,7 @@ export const getSearchVideos = async (query, nextPageToken) => {
   });
   return response.data;
 };
+
 export const getViewCount = async (videoId) => {
   const response = await instance.get('/videos', {
     params: {
@@ -54,6 +55,18 @@ export const getViewCount = async (videoId) => {
     },
   });
   return response.data.items[0].statistics.viewCount;
+};
+
+export const getVideoDuration = async (videoId) => {
+  const response = await instance.get('/videos', {
+    params: {
+      part: 'snippet',
+      part: 'contentDetails',
+      // part: 'statistics',
+      id: videoId,
+    },
+  });
+  return response.data.items[0].contentDetails.duration;
 };
 
 export const getChannelImg = async (channelId) => {
