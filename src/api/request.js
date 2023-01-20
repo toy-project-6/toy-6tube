@@ -62,7 +62,6 @@ export const getVideoDuration = async (videoId) => {
     params: {
       part: 'snippet',
       part: 'contentDetails',
-      // part: 'statistics',
       id: videoId,
     },
   });
@@ -128,7 +127,7 @@ export const getComments = async (videoId) => {
       part: 'snippet',
       videoId: videoId,
     },
-  })
+  });
   console.log(response.data.items[0]);
-  return response.data.items[0]
-}
+  return response.data.items[0];
+};
