@@ -3,17 +3,18 @@ import { commentDatas } from '../../public/commentData';
 import dayjs from 'dayjs';
 import { RiThumbUpLine, RiThumbDownLine } from 'react-icons/ri';
 import { Tooltip } from 'react-tooltip';
+import 'react-tooltip/dist/react-tooltip.css';
 
 const Comment = ({ id, img, name, publishedAt, updatedAt, text, likeCount }) => {
   return (
     <li key={id} className='flex mb-3'>
-      <div className='w-10 h-10 mr-4'>
-        <img src={img} className='rounded-full cursor-pointer w-10 h-10' />
+      <div className='w-10 h-10 mr-4 overflow-hidden rounded-full'>
+        <img src={img} className='cursor-pointer w-10 h-10 object-cover' />
       </div>
       <div className='text-[#f1f1f1]'>
         <div className='flex'>
           <div className='h-5 text-[13px] cursor-pointer'>{name}</div>
-          <div className='ml-1 text-[12px] text-stone-300 leading-3 cursor-pointer hover:text-[#aaa]'>
+          <div className='ml-1 text-[#aaa] text-[12px] leading-3 cursor-pointer hover:text-[#f1f1f1]'>
             {dayjs().to(dayjs(publishedAt))}
             {publishedAt !== updatedAt ? ' (수정됨)' : ''}
           </div>

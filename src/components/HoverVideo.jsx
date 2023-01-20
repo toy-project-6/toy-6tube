@@ -16,6 +16,12 @@ const HoverVideo = ({ video, videoId, chVideoId, setIsHover }) => {
       className='grid gap-2 p-4 bg-[#212121] w-96 rounded-lg absolute z-20'
     >
       <YouTube
+        onMouseOver={() => {
+          setIsHover(true);
+        }}
+        onMouseOut={() => {
+          setIsHover(false);
+        }}
         className='m-auto'
         videoId={videoId}
         opts={{
