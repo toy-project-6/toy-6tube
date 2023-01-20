@@ -9,8 +9,6 @@ const RelatedVideos = (id) => {
     // getRelatedVideos('kZlstKZjVxw').then((res) => {
     //   setVideos(res);
     // });
-
-    console.log(datas);
     setVideos(datas);
   }, []);
 
