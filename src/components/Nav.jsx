@@ -5,9 +5,9 @@ import { GrHistory } from 'react-icons/gr';
 import { HiThumbUp } from 'react-icons/hi';
 
 const Nav = ({ isFolded }) => {
-  return isFolded ? (
-    <nav className='sticky top-0 h-full bg-[#212121]'>
-      <div className='hidden w-16 pt-16 h-screen md:flex xl:hidden flex-col justify-start items-center'>
+  return !isFolded ? (
+    <nav className='sticky top-14 w-fit h-screen bg-[#212121] '>
+      <div className='hidden w-16 h-full md:flex xl:hidden flex-col justify-start items-center'>
         <div className='text-white font-semibold text-xs flex flex-col items-center gap-2 py-8 w-full hover:bg-[#414141] cursor-pointer'>
           <AiFillHome className='w-5 h-5 fill-white' />
           Home
@@ -17,7 +17,7 @@ const Nav = ({ isFolded }) => {
           Explore
         </div>
       </div>
-      <div className='hidden w-52 pt-16 h-screen xl:flex flex-col py-2 pr-2'>
+      <div className='hidden w-52 h-full xl:flex flex-col py-2 pr-2'>
         <div className='border-solid border-b border-gray-600 pb-2'>
           <div className='text-white flex items-center gap-7 w-full h-12 pl-6 font-semibold text-xs hover:bg-[#414141] cursor-pointer'>
             <AiFillHome className='w-5 h-5 fill-white' />
@@ -63,8 +63,8 @@ const Nav = ({ isFolded }) => {
       </div>
     </nav>
   ) : (
-    <nav className='sticky top-0 h-full bg-[#212121]'>
-      <div className='w-16 pt-16 h-screen md:flex flex-col justify-start items-center'>
+    <nav className='sticky top-14 w-fit h-screen pt-5 bg-[#212121]'>
+      <div className='w-16 h-full md:flex flex-col justify-start items-center'>
         <div className='text-white font-semibold text-xs flex flex-col items-center gap-2 py-8 w-full hover:bg-[#414141] cursor-pointer'>
           <AiFillHome className='w-5 h-5 fill-white' />
           Home
