@@ -50,15 +50,17 @@ const VideoCard = ({video, chVideoId, type}) => {
   } 
 
   return (
-    <li onMouseLeave={handleOut} className={related ? 'hidden gap-4 lg:flex' : 'relative cursor-pointer grid gap-4'}>
-      <img 
-        onMouseEnter={handleOver}
-        onClick={() => {navigate(`/detail/${videoId}`, {state: {video}})}}
-        src={thumbnails.medium.url}
-        className={related ? 'min-w-[168px] h-[94px] object-cover rounded-lg' : 'rounded-lg'}
-      />
-      <VideoDuration videoId={videoId}/>
-      {home && hoverText && <span className='text-white bg-black p-2 text-xs absolute top-28 right-0'>계속 마우스 오버하여 재생하기</span>}
+    <li onMouseLeave={handleOut} className={related ? 'hidden gap-4 lg:flex' : 'cursor-pointer grid gap-4'}>
+      <div className='relative'>
+        <img 
+          onMouseEnter={handleOver}
+          onClick={() => {navigate(`/detail/${videoId}`, {state: {video}})}}
+          src={thumbnails.medium.url}
+          className={related ? 'min-w-[168px] h-[94px] object-cover rounded-lg' : ' w-full rounded-lg'}
+        />
+        <VideoDuration videoId={videoId}/>
+        {home && hoverText && <span className='text-white bg-black p-2 text-xs absolute top-28 right-0'>계속 마우스 오버하여 재생하기</span>}
+      </div>
       {video && (<VideoCardInfo video={video.snippet} videoId={videoId} chVideoId={chVideoId}/>)}
       {home && isHover && hoverText ? <HoverVideo setIsHover={setIsHover} video={video.snippet} videoId={videoId} chVideoId={chVideoId}/> : ''}
     </li>
