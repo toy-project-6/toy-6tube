@@ -16,7 +16,6 @@ const MovieDetail = () => {
   const [channelData, setChannelData] = useState({});
   const [subscriberCount, setSubscriberCount] = useState(0);
 
-  console.log('state', state);
   useEffect(() => {
     getViewCount(id).then((response) => setViewCount(response));
     getChannelData(channelId).then((response) => setChannelData(response));

@@ -15,7 +15,6 @@ const Home = () => {
     // setVideos(datas);
   }, []);
 
-  console.log(videos);
   return (
     <>
       <div className='flex flex-col m-6'>
