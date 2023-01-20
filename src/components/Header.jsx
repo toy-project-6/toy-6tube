@@ -25,7 +25,7 @@ const Header = ({ isFolded, setIsFolded }) => {
   };
   return (
     <header>
-      <div className='mx-auto w-full fixed z-10 px-6 h-14 bg-[#0f0f0f] border-solid border-b border-gray-600'>
+      <div className='mx-auto w-full fixed z-10 px-6 h-14 bg-[#0f0f0f] border-solid border-b border-gray-600 text-white'>
         <div className='h-full flex items-center justify-between'>
           <div className='flex justify-between w-32'>
             <AiOutlineMenu

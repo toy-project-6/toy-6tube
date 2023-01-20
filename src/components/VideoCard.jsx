@@ -26,6 +26,7 @@ const VideoCard = ({ video, chVideoId, type }) => {
   } else {
     videoId = video.id;
   }
+  console.log(video);
   // const videoId = type ==='channel'? chVideoId : video.id
   const [channelData, setChannelData] = useState([]);
   const [hover, setHover] = useState(false);

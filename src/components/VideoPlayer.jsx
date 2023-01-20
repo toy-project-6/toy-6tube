@@ -8,19 +8,21 @@ import { FiMoreHorizontal } from 'react-icons/fi';
 const VideoPlayer = ({ id, state, channelData, subscriberCount, viewCount }) => {
   const { channelTitle, description, publishedAt, tags, title } = state.video.snippet;
   return (
-    <div className='flex flex-col gap-3 items-center px-2'>
-      <div className='w-full'>
+    <div className='flex flex-col gap-3 items-center px-2 grow lg:w-9/12 xs:w-fit'>
+      <div className='relative w-full h-0 pt-[29rem]'>
         <iframe
           id='player'
           title='video'
           type='text/html'
-          width='100%'
-          height='540'
+          width='640'
+          height='360'
+          allowFullScreen
           src={`http://www.youtube.com/embed/${id}`}
+          className='absolute top-0 left-0 w-full h-full'
         />
       </div>
 
-      <div className='h-fit'>
+      <div className='h-fit w-full'>
         <h2 className='text-xl font-semibold pb-2'>{title}</h2>
         <div className='flex justify-between items-center pb-5'>
           <div className='flex gap-3 items-center font-medium'>

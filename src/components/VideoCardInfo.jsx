@@ -30,7 +30,6 @@ const VideoCardInfo = ({ video, videoId, type }) => {
     navigate(`/channel/${channelId}`, { state: channelId });
   };
 
-  console.log(channelTitle);
   return (
     <div className='flex gap-4'>
       <img src={channelImg} className={related ? 'hidden' : 'rounded-full w-6 h-6'} />

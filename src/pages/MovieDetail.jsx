@@ -21,7 +21,7 @@ const MovieDetail = () => {
   }, []);
 
   return (
-    <div className='h-fit w-full mt-5 m-4 flex gap-5 bg-black text-white'>
+    <div className='h-fit w-full mt-5 m-4 flex flex-row gap-5 bg-black text-white'>
       <VideoPlayer
         id={id}
         state={state}
