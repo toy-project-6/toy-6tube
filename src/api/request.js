@@ -129,5 +129,6 @@ export const getComments = async (videoId) => {
       videoId: videoId,
     },
   })
+  console.log(response.data.items);
   return response.data.items
 }

@@ -24,12 +24,11 @@ const Comment = ({ id, img, name, publishedAt, updatedAt, text, likeCount }) => 
             <RiThumbUpLine
               id={'thumbUp' + id}
               data-tooltip-content='좋아요'
-              data-tooltip-place='bottom'
               className='mr-2 w-5 h-5 my-1.5 cursor-pointer'
-              onMouse
             />
             <Tooltip
               anchorId={'thumbUp' + id}
+              place='bottom'
               noArrow
               className='bottomtip absolute w-fit z-50 bg-[#696969] text-white'
             ></Tooltip>
@@ -37,11 +36,11 @@ const Comment = ({ id, img, name, publishedAt, updatedAt, text, likeCount }) => 
             <RiThumbDownLine
               id={'thumbDown' + id}
               data-tooltip-content='싫어요'
-              data-tooltip-place='bottom'
               className='ml-3 mr-4 w-5 h-5 my-1.5 cursor-pointer'
             />
             <Tooltip
               anchorId={'thumbDown' + id}
+              place='bottom'
               noArrow
               className='bottomtip absolute w-fit z-50 bg-[#696969] text-white'
             ></Tooltip>
