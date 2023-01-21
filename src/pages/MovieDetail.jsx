@@ -4,7 +4,6 @@ import { useLocation } from 'react-router-dom';
 import RelatedVideos from '../components/RelatedVideos';
 import { getChannelData, getRelatedVideos, getSubscriberInfo, getViewCount } from '../api/request';
 import VideoPlayer from '../components/VideoPlayer';
-import Comments from '../components/Comment';
 import CommentsContainer from '../components/CommentsContainer';
 
 const MovieDetail = () => {
