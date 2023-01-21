@@ -2,12 +2,12 @@ import React, { useState, useEffect } from 'react';
 import { commentDatas } from '../../public/commentData';
 import { getComments } from '../api/request';
 import Comment from './Comment';
+import { MdSort } from 'react-icons/md';
 
 const CommentsContainer = ({ id }) => {
   const [comments, setComments] = useState([]);
   useEffect(() => {
     getComments(id).then((res) => {
-      console.log(res);
       setComments(res);
     });
     // console.log(commentDatas[0]);
@@ -19,10 +19,11 @@ const CommentsContainer = ({ id }) => {
 
   return (
     <div>
-      <div className='mt-[24px] mb-[32px] px-2'>
-        <div className='h-6 leading-6 mb-6'>
+      <div className='mt-[24px] mb-[32px] px-2 text-[#f1f1f1]'>
+        <div className='h-6 leading-6 mb-6 flex'>
           <span className='mr-6'>댓글 {comments.length} 개</span>
-          <span className='cursor-pointer'>정렬기준</span>
+          <MdSort className='w-6 h-6 mr-3' />
+          <span className='cursor-pointer'> 정렬기준</span>
         </div>
         <div className='h-[40px] w-[100%] flex place-content-around leading-10'>
           <div className='mr-4'>
