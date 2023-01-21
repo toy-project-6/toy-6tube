@@ -3,17 +3,17 @@ import { getRelatedVideos } from '../api/request';
 import { datas } from '../../public/datas';
 import VideoCard from './VideoCard/VideoCard';
 
-const RelatedVideos = (id) => {
+const RelatedVideos = ({ id }) => {
   const [videos, setVideos] = useState([]);
   useEffect(() => {
-    // getRelatedVideos('kZlstKZjVxw').then((res) => {
-    //   setVideos(res);
-    // });
-    setVideos(datas);
+    getRelatedVideos(id).then((res) => {
+      setVideos(res);
+    });
+    // setVideos(datas);
   }, []);
 
   return (
-    <div className=''>
+    <div className='lg:w-4/12'>
       <ul className='gap-[8px] columns-10 flex flex-col'>
         {videos.map((video) => (
           // <DetailVideoCard key={Object.entries(video.id)[1][1]} video={video} />
