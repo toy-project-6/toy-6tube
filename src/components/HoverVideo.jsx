@@ -13,7 +13,7 @@ const HoverVideo = ({ video, videoId, chVideoId, setIsHover }) => {
       onMouseOut={() => {
         setIsHover(false);
       }}
-      className='grid gap-2 p-4 bg-[#212121] w-96 rounded-lg absolute z-20'
+      className='grid gap-2 p-4 bg-[#212121] w-96 rounded-lg absolute top-[-20px] left-[-20px] ease-in duration-300 z-20'
     >
       <YouTube
         className='m-auto'
