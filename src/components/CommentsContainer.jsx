@@ -10,7 +10,12 @@ const CommentsContainer = ({ id }) => {
     getComments(id).then((res) => {
       setComments(res);
     });
+    // console.log(commentDatas[0]);
+    // setComments(commentDatas[0]);
   }, []);
+
+  // const commentTest = commentDatas[0];
+  // console.log(commentTest[0].snippet);
 
   return (
     <div>
