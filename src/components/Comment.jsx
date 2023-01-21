@@ -11,7 +11,7 @@ const Comment = ({ id, img, name, publishedAt, updatedAt, text, likeCount }) => 
       <div className='w-10 h-10 mr-4 overflow-hidden rounded-full'>
         <img src={img} className='cursor-pointer w-10 h-10 object-cover' />
       </div>
-      <div className='text-[#f1f1f1]'>
+      <div className='text-[#f1f1f1] w-fit'>
         <div className='flex'>
           <div className='h-5 text-[13px] cursor-pointer'>{name}</div>
           <div className='ml-1 text-[#aaa] text-[12px] leading-3 cursor-pointer hover:text-[#f1f1f1]'>
@@ -20,7 +20,7 @@ const Comment = ({ id, img, name, publishedAt, updatedAt, text, likeCount }) => 
           </div>
         </div>
         <div>
-          <div className='text-sm mt-1'>{text}</div>
+          <div className='text-sm mt-1 w-fit'>{text}</div>
           <div className='flex mt-2 h-8'>
             <RiThumbUpLine
               id={'thumbUp' + id}
