@@ -61,7 +61,6 @@ export const getVideoDuration = async (videoId) => {
     params: {
       part: 'snippet',
       part: 'contentDetails',
-      // part: 'statistics',
       id: videoId,
     },
   });
