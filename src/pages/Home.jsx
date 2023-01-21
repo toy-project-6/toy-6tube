@@ -39,8 +39,7 @@ const Home = () => {
         <Buttons setVideos={setVideos} setType={setType} />
 
         <ul className='w-full p-4 grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 xs:grid-cols-1 gap-10'>
-          {videos &&
-            videos.map((video) => <VideoCard key={video.id.videoId} video={video} type={type} />)}
+          {videos && videos?.map((video) => <VideoCard key={video.id} video={video} type={type} />)}
         </ul>
       </div>
     </>

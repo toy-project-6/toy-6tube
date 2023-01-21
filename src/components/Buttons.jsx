@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import { datas } from '../../public/datas';
-import { getSearchVideos } from '../api/request';
+import { getMostPopularVideos, getSearchVideos } from '../api/request';
 
 const Buttons = ({ setVideos, setType }) => {
   const [clicked, setClicked] = useState('전체');
@@ -17,11 +16,12 @@ const Buttons = ({ setVideos, setType }) => {
           setClicked(buttonName);
           if (buttonName === '전체' || buttonName === '최근에 업로드된 동영상') {
             setType('');
-            setVideos(datas);
-            return;
+            getMostPopularVideos().then((data) => {
+              setVideos(data);
+            });
           }
-          setType('search');
-          getSearchVideos(buttonName).then((data) => setVideos(data.items));
+          // setType('search');
+          getSearchVideos(buttonName, '').then((data) => setVideos(data.items));
         }}
       >
         {buttonName}

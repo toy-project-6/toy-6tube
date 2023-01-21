@@ -7,6 +7,7 @@ import relativeTime from 'dayjs/plugin/relativeTime';
 import 'dayjs/locale/ko';
 import { useNavigate } from 'react-router-dom';
 import { Tooltip } from 'react-tooltip';
+import 'react-tooltip/dist/react-tooltip.css';
 import numberToKorean from '../../util/numberToKorean';
 
 //발행날짜 라이브러리
@@ -18,7 +19,9 @@ const VideoCardInfo = ({ video, videoId, type }) => {
   const [viewCount, setViewCount] = useState(0);
   const [channelImg, setChannelImg] = useState('');
   const related = type === 'relatedVideo';
-
+  if (typeof videoId === 'object') {
+    videoId = videoId.videoId;
+  }
   useEffect(() => {
     getViewCount(videoId).then((response) => setViewCount(response));
     getChannelImg(channelId).then((response) => setChannelImg(response));
@@ -39,34 +42,34 @@ const VideoCardInfo = ({ video, videoId, type }) => {
         }
       >
         <p
-          id={videoId?.videoId}
+          id={videoId}
           className={
             related
-              ? 'w-30 overflow-hidden text-ellipsis text-white text-sm leading-5 line-clamp-2 h-10'
+              ? 'w-30 overflow-hidden text-ellipsis text-white text-sm leading-5 line-clamp-2 max-h-10'
               : 'text-white line-clamp-2 leading-5 font-medium'
           }
         >
           {title}
         </p>
         <p
-          id={'channel' + videoId.videoId}
+          id={'channel' + videoId}
           data-tooltip-content={channelTitle}
           onClick={handleClick}
           className={
             related
-              ? 'text-[12px] text-zinc-300 hover:text-white'
+              ? 'text-xs text-zinc-300 hover:text-white'
               : 'text-sm text-zinc-300 hover:text-white'
           }
         >
           {channelTitle}
         </p>
         <Tooltip
-          anchorId={'channel' + videoId.videoId}
-          // data-toolip-place='top'
+          anchorId={'channel' + videoId}
+          data-toolip-place='top'
           noArrow
           className='tooltip absolute w-fit z-10 bg-[#696969] text-white'
         ></Tooltip>
-        <p className={related ? 'text-[12px] flex text-zinc-300' : 'text-sm flex text-zinc-300'}>
+        <p className={related ? 'text-xs flex text-zinc-300' : 'text-sm flex text-zinc-300'}>
           조회수 {viewCount && numberToKorean(viewCount)}회 <BsDot />{' '}
           {dayjs().to(dayjs(publishedAt))}
         </p>
