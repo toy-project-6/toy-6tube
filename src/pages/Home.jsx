@@ -12,10 +12,7 @@ const Home = () => {
     getMostPopularVideos().then((data) => {
       setVideos(data);
     });
-    // setVideos(datas);
   }, []);
-
-  console.log()
 
   return (
     <>
