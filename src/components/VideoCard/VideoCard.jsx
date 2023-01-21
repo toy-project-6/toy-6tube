@@ -53,9 +53,9 @@ const VideoCard = ({ video, chVideoId, type }) => {
   return (
     <li
       onMouseLeave={handleOut}
-      className={related ? 'hidden gap-4 lg:flex' : 'cursor-pointer grid gap-4'}
+      className={related ? 'hidden gap-4 lg:flex' : 'relative cursor-pointer grid gap-4'}
     >
-      <div className='relative cursor-pointer'>
+      <div className='cursor-pointer'>
         <img
           onMouseEnter={handleOver}
           onClick={() => {
