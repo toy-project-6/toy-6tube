@@ -68,7 +68,7 @@ const VideoCard = ({ video, chVideoId, type }) => {
         />
         <VideoDuration videoId={videoId} />
         {home && hoverText && (
-          <span className='text-white bg-black p-2 text-xs absolute bottom-[1px] right-0'>
+          <span className='text-white bg-black p-1 text-xs absolute top-24 right-0'>
             계속 마우스 오버하여 재생하기
           </span>
         )}
