@@ -4,7 +4,6 @@
 
 #### ✨배포사이트 - 🔗 [6tube - Toy Project](https://6tube.netlify.app/)
 
-⚠️ API 일일 할당량 초과로 정상적으로 동작하지 않을 경우 아래 링크를 눌러주세요!
 <br />
 
 - 유튜브 클론코딩 사이트로 메인/검색/영상상세/채널상세 페이지로 구성되어 있습니다.
@@ -104,7 +103,13 @@ iframe태그를 이용해 해당영상을 플레이하고 채널과 영상에 �
 </ul>
 </details>
 <details><summary>안가을</summary>
-*Write here!*
+<br/>
+<ul>
+<li><b>검색 페이지</b>
+<br/>
+메인에서 키워드 검색 시 검색결과 페이지로 이동합니다.
+</li>
+</ul>
 </details>
   <br/>
 
