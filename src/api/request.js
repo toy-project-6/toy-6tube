@@ -46,10 +46,7 @@ export const getSearchVideos = async (query, nextPageToken) => {
 export const getViewCount = async (videoId) => {
   const response = await instance.get('/videos', {
     params: {
-      part: 'snippet',
-      part: 'contentDetails',
-      part: 'player',
-      part: 'statistics',
+      part: 'snippet, contentDetails, player, statistics',
       id: videoId,
     },
   });
@@ -59,8 +56,7 @@ export const getViewCount = async (videoId) => {
 export const getVideoDuration = async (videoId) => {
   const response = await instance.get('/videos', {
     params: {
-      part: 'snippet',
-      part: 'contentDetails',
+      part: 'snippet, contentDetails',
       id: videoId,
     },
   });
@@ -100,8 +96,7 @@ export const getSubscriberInfo = async (channelId) => {
 export const getPlayListId = async (channelId) => {
   const response = await instance.get('/playlists', {
     params: {
-      part: 'snippet',
-      part: 'contentDetails',
+      part: 'snippet, contentDetails',
       channelId: channelId,
     },
   });

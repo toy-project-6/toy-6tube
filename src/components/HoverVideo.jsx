@@ -3,16 +3,19 @@ import YouTube from 'react-youtube';
 import { AiOutlineClockCircle } from 'react-icons/ai';
 import { MdPlaylistAdd } from 'react-icons/md';
 import VideoCardInfo from './VideoCard/VideoCardInfo';
+import { motion } from 'framer-motion';
 
 const HoverVideo = ({ video, videoId, chVideoId, setIsHover }) => {
   return (
-    <div
-      onMouseOver={() => {
-        setIsHover(true);
-      }}
-      onMouseOut={() => {
-        setIsHover(false);
-      }}
+    <motion.div
+      // onMouseOver={() => {
+      //   setIsHover(true);
+      // }}
+      // onMouseOut={() => {
+      //   setIsHover(false);
+      // }}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
       className='grid gap-2 p-4 bg-[#212121] w-96 rounded-lg absolute top-[-20px] left-[-20px] z-20'
     >
       <YouTube
@@ -39,7 +42,7 @@ const HoverVideo = ({ video, videoId, chVideoId, setIsHover }) => {
           현재 재생 목록에 추가
         </button>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

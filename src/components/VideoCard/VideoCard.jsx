@@ -56,6 +56,7 @@ const VideoCard = ({ video, chVideoId, type }) => {
       className={related ? 'hidden gap-4 lg:flex' : 'relative cursor-pointer grid gap-4'}
     >
       <div className='cursor-pointer'>
+        <div className='relative'>
         <img
           onMouseEnter={handleOver}
           onClick={() => {
@@ -68,13 +69,14 @@ const VideoCard = ({ video, chVideoId, type }) => {
         />
         <VideoDuration videoId={videoId} />
         {home && hoverText && (
-          <span className='text-white bg-black p-1 text-xs absolute top-24 right-0'>
+          <span className='text-white bg-black p-1 text-xs absolute bottom-0 right-0'>
             계속 마우스 오버하여 재생하기
           </span>
         )}
+        </div>
       </div>
       {video && (
-        <VideoCardInfo video={video.snippet} videoId={videoId} chVideoId={chVideoId} type={type} />
+        <VideoCardInfo video={video.snippet} videoId={videoId} type={type} />
       )}
       {home && isHover && hoverText ? (
         <HoverVideo
