@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { getRelatedVideos } from '../api/request';
-import { datas } from '../../public/datas';
 import VideoCard from './VideoCard/VideoCard';
 
 const RelatedVideos = ({ id }) => {
@@ -9,8 +8,7 @@ const RelatedVideos = ({ id }) => {
     getRelatedVideos(id).then((res) => {
       setVideos(res);
     });
-    // setVideos(datas);
-  }, []);
+  }, [id]);
 
   return (
     <div className='lg:w-4/12'>

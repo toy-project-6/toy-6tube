@@ -10,7 +10,7 @@ const CommentsContainer = ({ id }) => {
     getComments(id).then((res) => {
       setComments(res);
     });
-  }, []);
+  }, [id]);
 
   return (
     <div>
